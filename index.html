@@ -1,74 +1,27 @@
 <!DOCTYPE html>
-<html lang="en-US" dir="ltr">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <link rel="icon" type="image/png" href="https://edgestatic.azureedge.net/welcome/static/favicon.png">
-    <link rel="stylesheet" href="./converter.css">
-    <link rel="manifest" href="./manifest.json">
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" type="image/png" href="https://edgestatic.azureedge.net/welcome/static/favicon.png">
+  <link rel="stylesheet" href="/DB-Website-PWA/converter.css">
+  <link rel="manifest" href="/DB-Website-PWA/manifest.json">
+  <title>Temperature converter</title>
+</head>
+<body>
+  <form id="converter">
+    <button id="installButton" type="button" style="display:flex;">App installieren</button>
+    <!-- ... Rest deines Forms ... -->
+  </form>
 
-    <title>Temperature converter</title>
-  </head>
-  <body>
-    <form id="converter">
-      <button id="installButton" style="display:flex;">App installieren</button>
-
-      <label for="input-temp">temperature</label>
-      <input type="text" id="input-temp" name="input-temp" value="20" />
-      <label for="input-unit">from</label>
-      <select id="input-unit" name="input-unit">
-        <option value="c" selected>Celsius</option>
-        <option value="f">Fahrenheit</option>
-        <option value="k">Kelvin</option>
-      </select>
-      <label for="output-unit">to</label>
-      <select id="output-unit" name="output-unit">
-        <option value="c">Celsius</option>
-        <option value="f" selected>Fahrenheit</option>
-        <option value="k">Kelvin</option>
-      </select>
-      <output name="output-temp" id="output-temp" for="input-temp input-unit output-unit">68 F</output>
-    </form>
-
-    <script src="install.js"></script>
-
-    <script src="./converter.js"></script>
-    <script>
-      if('serviceWorker' in navigator) {
-        navigator.serviceWorker.register('./sw.js', { scope: './' });
-      }
-    </script>
-
-    <script>
-    // Prüfen, ob die App bereits als PWA läuft
-    if (window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone) {
-        console.log("PWA bereits installiert");
-        // Hier z.B. einen Button zum Installieren ausblenden
-        document.getElementById('installButton')?.remove();
-    } else {
-        console.log("PWA noch nicht installiert");
+  <script src="/DB-Website-PWA/converter.js"></script>
+  <script src="/DB-Website-PWA/install.js"></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/DB-Website-PWA/sw.js', {
+        scope: '/DB-Website-PWA/'
+      });
     }
-
-    // Optional: Event abfangen, wenn Browser die PWA-Installation anbietet
-    let deferredPrompt;
-
-    window.addEventListener('beforeinstallprompt', (e) => {
-        e.preventDefault();
-        deferredPrompt = e;
-        // Button anzeigen
-        document.getElementById('installButton')?.classList.remove('hidden');
-
-        document.getElementById('installButton').addEventListener('click', () => {
-            deferredPrompt.prompt();
-            deferredPrompt.userChoice.then((choiceResult) => {
-                if (choiceResult.outcome === 'accepted') {
-                    console.log('PWA wurde installiert');
-                }
-                deferredPrompt = null;
-            });
-        });
-    });
-</script>
-
-  </body>
+  </script>
+</body>
 </html>
