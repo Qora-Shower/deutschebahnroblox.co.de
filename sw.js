@@ -1,36 +1,27 @@
-const CACHE_NAME = `temperature-converter-v1`;
-    
-// Use the install event to pre-cache all initial resources.
+const CACHE_NAME = 'temperature-converter-v1';
+const BASE = '/DB-Website-PWA/';  // Basis-Pfad für GitHub Pages
+
 self.addEventListener('install', event => {
-  event.waitUntil((async () => {
-    const cache = await caches.open(CACHE_NAME);
-    cache.addAll([
-      './',
-      './converter.js',
-      './converter.css'
+  event.waitUntil(caches.open(CACHE_NAME).then(cache => {
+    return cache.addAll([
+      BASE,
+      BASE + 'index.html',
+      BASE + 'converter.css',
+      BASE + 'converter.js',
+      BASE + 'install.js',
+      BASE + 'manifest.json',
+      BASE + 'icon512.png'
     ]);
-  })());
+  }));
 });
 
 self.addEventListener('fetch', event => {
-  event.respondWith((async () => {
-    const cache = await caches.open(CACHE_NAME);
-
-    // Get the resource from the cache.
-    const cachedResponse = await cache.match(event.request);
-    if (cachedResponse) {
-      return cachedResponse;
-    } else {
-        try {
-          // If the resource was not in the cache, try the network.
-          const fetchResponse = await fetch(event.request);
-    
-          // Save the resource in the cache and return it.
-          cache.put(event.request, fetchResponse.clone());
-          return fetchResponse;
-        } catch (e) {
-          // The network failed
-        }
-    }
-  })());
+  event.respondWith(caches.open(CACHE_NAME).then(cache =>
+    cache.match(event.request).then(resp => {
+      return resp || fetch(event.request).then(fresp => {
+        cache.put(event.request, fresp.clone());
+        return fresp;
+      });
+    })
+  ));
 });
