@@ -1,4 +1,4 @@
-const CACHE_NAME = 'temperature-converter-v1';
+const CACHE_NAME = 'Deutsche-Bahn-Roblox';
 const BASE = '/DB-Website-PWA/';  // Basis-Pfad für GitHub Pages
 
 self.addEventListener('install', event => {
@@ -6,8 +6,7 @@ self.addEventListener('install', event => {
     return cache.addAll([
       BASE,
       BASE + 'index.html',
-      BASE + 'converter.css',
-      BASE + 'converter.js',
+      BASE + 'index.css',
       BASE + 'install.js',
       BASE + 'manifest.json',
       BASE + 'icon512.png'
