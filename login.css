@@ -1,0 +1,53 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #1b1b1b;
+  color: white;
+  font-family: Arial, sans-serif;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-screen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: slideDownFadeIn 1s ease-out;
+}
+
+input {
+  margin: 10px;
+  padding: 10px;
+  width: 200px;
+  border: none;
+  border-radius: 4px;
+}
+
+button {
+  background-color: #333;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin-top: 10px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+button:hover {
+  background-color: #555;
+}
+
+/* Login reinfallen */
+@keyframes slideDownFadeIn {
+  0% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}

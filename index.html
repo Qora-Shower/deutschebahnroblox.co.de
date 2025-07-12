@@ -3,42 +3,42 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="icon" type="image/png" href="https://edgestatic.azureedge.net/welcome/static/favicon.png">
+  <link rel="icon" type="image/png" href="icon2-512.png">
   <link rel="stylesheet" href="index.css">
   <link rel="manifest" href="/DB-Website-PWA/manifest.json">
   <title>Start</title>
 </head>
 <body>
-    <div class="center-container">
-    <button id="installButton" type="button">Download App</button>
-
-    <img src="icon512.png" alt="Loading..." class="spinner" id="loader">
-    <button class="btn" onclick="showAndHideLoader()">Lade Vorgang starten</button>
+  <!-- Ladeanimation -->
+  <div class="loader-screen" id="loaderScreen">
+    <img src="icon2-512.png" alt="Logo" class="logo">
+    <h1 class="loading-text">Lade<span class="dots">.</span></h1>
   </div>
-    <!-- PWA -->
-    <script src="/DB-Website-PWA/install.js"></script>
-    <script>
-      if ('serviceWorker' in navigator) {
-        navigator.serviceWorker.register('/DB-Website-PWA/sw.js', {
-          scope: '/DB-Website-PWA/'
-        });
-      }
-    </script>
 
-    <!-- Loader-Logik -->
-    <script>
-      function showLoader() {
-          document.getElementById('loader').style.display = 'block';
-      }
+  <!-- PWA (Unverändert) -->
+  <script src="/DB-Website-PWA/install.js"></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/DB-Website-PWA/sw.js', {
+        scope: '/DB-Website-PWA/'
+      });
+    }
+  </script>
 
-      function hideLoader() {
-          document.getElementById('loader').style.display = 'none';
-      }
+  <!-- Ladeanimation -->
+  <script>
+    const dots = document.querySelector('.dots');
+    let dotCount = 1;
+    setInterval(() => {
+      dots.textContent = '.'.repeat(dotCount++ % 4 || 1);
+    }, 500);
 
-      function showAndHideLoader() {
-          showLoader();
-          setTimeout(hideLoader, 3000);
-      }
-    </script>
+    setTimeout(() => {
+      document.getElementById('loaderScreen').classList.add('hide');
+      setTimeout(() => {
+        window.location.href = 'login.html';
+      }, 1000); // nach Animation weiterleiten
+    }, 5000);
+  </script>
 </body>
 </html>
