@@ -3,14 +3,14 @@
   "name": "[Roblox] DB Training",
   "short_name": "DB Training [RBX]",
   "description": "Your all-in-one trainings calender",
-  "start_url": "/DB-Website-PWA/",
+  "start_url": "/deutschebahnroblox.co.de/",
   "background_color": "#ffffff",
   "theme_color": "#121212",
   "orientation": "any",
   "display": "fullscreen",
   "icons": [
   {
-    "src": "/DB-Website-PWA/icon512.png",
+    "src": "/deutschebahnroblox.co.de/icon512.png",
     "sizes": "512x512",
     "type": "image/png"
   }
