@@ -1,5 +1,5 @@
 const CACHE_NAME = 'Deutsche-Bahn-Roblox';
-const BASE = '/DB-Website-PWA/';  // Basis-Pfad für GitHub Pages
+const BASE = '/deutschebahnroblox.co.de/';  // Basis-Pfad für GitHub Pages
 
 self.addEventListener('install', event => {
   event.waitUntil(caches.open(CACHE_NAME).then(cache => {
