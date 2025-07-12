@@ -5,10 +5,12 @@ self.addEventListener('install', event => {
   event.waitUntil(caches.open(CACHE_NAME).then(cache => {
     return cache.addAll([
       BASE,
-      BASE + 'index.html',
-      BASE + 'index.css',
-      BASE + 'login.html',
-      BASE + 'login.css',
+      BASE + 'pages/index.html',
+      BASE + 'styles/index/index.css',
+      BASE + 'pages/login.html',
+      BASE + 'styles/login/login.css',
+      BASE + 'pages/calender.html',
+      BASE + 'styles/kalender/calender.css',
       BASE + 'install.js',
       BASE + 'manifest.json',
       BASE + 'icon512.png'
