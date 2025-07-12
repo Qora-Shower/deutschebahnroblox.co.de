@@ -7,6 +7,8 @@ self.addEventListener('install', event => {
       BASE,
       BASE + 'index.html',
       BASE + 'index.css',
+      BASE + 'login.html',
+      BASE + 'login.css',
       BASE + 'install.js',
       BASE + 'manifest.json',
       BASE + 'icon512.png'

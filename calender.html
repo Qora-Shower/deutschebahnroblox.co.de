@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Kalender</title>
+  <link rel="stylesheet" href="styles/kalender/calender.css" />
+  <link rel="icon" href="icon2-512.png" type="image/png">
+</head>
+<body>
+  <div class="calendar-app">
+    <!-- Kopfzeile -->
+    <div class="header">
+      <button class="add-sequence">+ Add Sequences</button>
+      <div class="status-buttons">
+        <span class="status blue">Your Sequences</span>
+        <span class="status green">Publish for trade</span>
+        <span class="status orange">Published for drop</span>
+        <span class="status gray">Awaiting confirmation</span>
+      </div>
+    </div>
+
+    <!-- Monatsanzeige -->
+    <div class="month-nav">
+      <span>Dec.</span>
+      <h2>January</h2>
+      <span>Feb.</span>
+    </div>
+
+    <!-- Wochentage -->
+    <div class="weekdays">
+      <span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span><span>Sun</span>
+    </div>
+
+    <!-- Kalendertage -->
+    <div class="calendar-grid">
+      <!-- Beispielhafte Tage -->
+      <div class="day past">31 <span class="tag black">NAS202</span></div>
+      <div class="day">1</div>
+      <div class="day">2</div>
+      <div class="day blue">3</div>
+      <div class="day blue">4</div>
+      <div class="day blue">5</div>
+      <div class="day blue">6</div>
+
+      <div class="day">7</div>
+      <div class="day">8 <span class="tag black">DIP</span></div>
+      <div class="day">9</div>
+      <div class="day">10</div>
+      <div class="day">11</div>
+      <div class="day">12</div>
+      <div class="day">13</div>
+
+      <div class="day orange">15 <span class="tag white">NAS204</span></div>
+      <div class="day green">28 <span class="tag white">DIP</span></div>
+    </div>
+
+    <!-- Fußzeile -->
+    <div class="bottom-nav">
+      <button>Your Sequences</button>
+      <button>Search Sequence</button>
+      <button>Exchanges</button>
+    </div>
+  </div>
+</body>
+</html>
