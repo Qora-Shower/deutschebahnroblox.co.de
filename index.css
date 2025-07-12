@@ -1,10 +1,14 @@
 /* Hintergrundfarbe für die gesamte Seite */
 body {
-  background-color: #171717;
+  background-color: #1b1b1b;
   margin: 0;
   padding: 0;
   color: white; /* Optional, damit Text sichtbar bleibt */
   font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
 }
 
 /* Spinner */
