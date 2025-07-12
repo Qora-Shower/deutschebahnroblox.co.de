@@ -1,20 +1,38 @@
+/* Hintergrundfarbe für die gesamte Seite */
 body {
-    background-color: #ffffff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0 auto;
+  background-color: #171717;
+  margin: 0;
+  padding: 0;
+  color: white; /* Optional, damit Text sichtbar bleibt */
+  font-family: Arial, sans-serif;
 }
 
+/* Spinner */
 .spinner {
-  width: 50px; /* Größe des Bildes */
-  height: 50px;
-  color: #ff0000;
+  width: 80px;
+  height: 80px;
   animation: spin 1s linear infinite;
-  display: none; /* Standardmäßig ausgeblendet */
+  display: none;
+  margin: 20px;
 }
 
+/* Dreh-Animation */
 @keyframes spin {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
+}
+
+/* Optional: Button-Stil */
+button.btn {
+  background-color: #333;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin: 10px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+button.btn:hover {
+  background-color: #555;
 }
