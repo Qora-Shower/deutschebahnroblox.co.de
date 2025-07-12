@@ -1,14 +1,23 @@
 /* Hintergrundfarbe für die gesamte Seite */
 body {
   background-color: #1b1b1b;
-  margin: 0;
+  margin: 0 auto;
   padding: 0;
-  color: white; /* Optional, damit Text sichtbar bleibt */
+  color: white;
   font-family: Arial, sans-serif;
+  height: 100vh;
+  width: 100vw;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 0 auto;
+}
+
+/* Wrapper für alle Inhalte */
+.center-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
 
 /* Spinner */
@@ -26,7 +35,7 @@ body {
   100% { transform: rotate(360deg); }
 }
 
-/* Optional: Button-Stil */
+/* Button-Stil */
 button.btn {
   background-color: #333;
   color: white;
