@@ -6,12 +6,12 @@
   <link rel="icon" type="image/png" href="https://edgestatic.azureedge.net/welcome/static/favicon.png">
   <link rel="stylesheet" href="/DB-Website-PWA/index.css">
   <link rel="manifest" href="/DB-Website-PWA/manifest.json">
-  <title>Temperature converter</title>
+  <title>Start</title>
 </head>
 <body>
     <button id="installButton" type="button" style="display:flex;">Download App</button>
     <!-- ... Rest deines Forms ... -->
-
+    <img src="icon512.png" alt="Loading..." class="spinner" id="loader">
   <!-- converter.js entfernt -->
   <script src="/DB-Website-PWA/install.js"></script>
   <script>
@@ -21,5 +21,22 @@
       });
     }
   </script>
+
+  <script>
+    function showLoader() {
+        document.getElementById('loader').style.display = 'block';
+    }
+
+    function hideLoader() {
+        document.getElementById('loader').style.display = 'none';
+    }
+
+    // Zeige den Loader für 3 Sekunden
+    function showAndHideLoader() {
+        showLoader();
+        setTimeout(hideLoader, 3000);
+    }
+</script>
+
 </body>
 </html>

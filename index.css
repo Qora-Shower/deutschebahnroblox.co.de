@@ -3,4 +3,18 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin: 0 auto;
+}
+
+.spinner {
+  width: 50px; /* Größe des Bildes */
+  height: 50px;
+  color: #ff0000;
+  animation: spin 1s linear infinite;
+  display: none; /* Standardmäßig ausgeblendet */
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }
