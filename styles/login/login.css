@@ -172,7 +172,7 @@ input:focus {
 }
 
 /* Responsive: Mobile Style */
-@media (max-width: 768px) {
+@media (max-width: 600px) {
   .desktop-view {
     display: none;
   }
