@@ -202,10 +202,10 @@ input:focus {
 
 @media (max-width: 600px) {
   .desktop-view {
-    display: none;
+    display: none !important;
   }
 
   .mobile-view {
-    display: flex;
+    display: flex !important;
   }
 }
