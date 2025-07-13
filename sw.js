@@ -1,4 +1,4 @@
-const CACHE_NAME = 'Deutsche-Bahn-Roblox-v4';
+const CACHE_NAME = 'Deutsche-Bahn-Roblox-v5';
 const BASE = '/deutschebahnroblox.co.de/';  // Basis-Pfad für GitHub Pages
 
 self.addEventListener('install', event => {
