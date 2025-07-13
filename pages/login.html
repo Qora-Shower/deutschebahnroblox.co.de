@@ -1,54 +1,54 @@
 <!DOCTYPE html>
 <html lang="de-DE">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Login</title>
-  <link rel="stylesheet" href="/deutschebahnroblox.co.de/styles/login/login.css">
+  <link rel="stylesheet" href="/deutschebahnroblox.co.de/styles/login/login.css" />
 </head>
 <body>
-  <div class="card">
-    <div class="tab-switch">
-      <button id="loginTab" class="active" onclick="switchTab('login')">Login</button>
-      <button id="signupTab" onclick="switchTab('signup')">Sign Up</button>
+  <div class="mobile-view">
+    <img src="/deutschebahnroblox.co.de/images/logo/db512.png" alt="DB Logo" class="logo" />
+    <h2 class="welcome">Willkommen bei Deutsche Bahn</h2>
+
+    <div class="slideshow">
+      <div class="slides">
+        <div class="slide active">Hallo und Willkommen bei unserem DB-System.</div>
+        <div class="slide">Sichere Anmeldung für alle Mitarbeiter & Fahrgäste.</div>
+        <div class="slide">Jetzt schnell und einfach registrieren.</div>
+      </div>
+      <div class="dots">
+        <span class="dot active"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+      </div>
     </div>
-    <div id="formContainer">
-      <!-- Dynamisch geladen per JavaScript -->
+
+    <button class="primary-btn">Create an Account</button>
+    <button class="secondary-btn">Log In</button>
+  </div>
+
+  <div class="desktop-view">
+    <div class="login-card">
+      <div class="mode-switch">
+        <div class="mode-buttons">
+          <button class="active">Login</button>
+          <button>Login (Supervisor)</button>
+        </div>
+        <div class="separator-line"><span></span></div>
+        <div class="mode-buttons">
+          <button>Sign Up</button>
+          <button>Sign Up (Supervisor)</button>
+        </div>
+      </div>
+
+      <div class="form-placeholder">
+        <!-- Inputs folgen später -->
+        <p style="color: gray;">(Hier erscheinen später die Input-Felder)</p>
+      </div>
     </div>
   </div>
 
-  <script>
-    const formContainer = document.getElementById("formContainer");
-    const loginTab = document.getElementById("loginTab");
-    const signupTab = document.getElementById("signupTab");
-
-    function switchTab(tab) {
-      loginTab.classList.remove("active");
-      signupTab.classList.remove("active");
-
-      if (tab === "login") {
-        loginTab.classList.add("active");
-        formContainer.innerHTML = `
-          <h2>Login</h2>
-          <input type="text" placeholder="Benutzername">
-          <input type="password" placeholder="Passwort">
-          <button onclick="window.location.href='/deutschebahnroblox.co.de/pages/calender.html'">Login</button>
-          <button class="secondary" onclick="alert('Supervisor-Login')">Login (Supervisor)</button>
-        `;
-      } else {
-        signupTab.classList.add("active");
-        formContainer.innerHTML = `
-          <h2>Sign Up</h2>
-          <input type="text" placeholder="Benutzername">
-          <input type="password" placeholder="Passwort">
-          <input type="password" placeholder="Passwort bestätigen">
-          <button onclick="alert('User registered')">Sign Up</button>
-          <button class="secondary" onclick="alert('Supervisor sign up')">Sign Up (Supervisor)</button>
-        `;
-      }
-    }
-
-    switchTab('login');
-  </script>
+  <script src="/deutschebahnroblox.co.de/login.js"></script>
 </body>
 </html>

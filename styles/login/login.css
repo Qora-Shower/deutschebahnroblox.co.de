@@ -1,95 +1,183 @@
 body {
   margin: 0;
   padding: 0;
-  background-color: #eaeaea;
-  font-family: 'Segoe UI', sans-serif;
-  height: 100vh;
+  background-color: #dddddd;
+  font-family: "Arial", sans-serif;
+  color: #111;
+}
+
+.logo {
+  width: 80px;
+  margin: 30px auto 10px;
+  display: block;
+}
+
+.welcome {
+  text-align: center;
+  margin: 5px 0 15px;
+  font-size: 1.2em;
+}
+
+.mobile-view {
+  display: none;
+  padding: 20px;
+  text-align: center;
+}
+
+.slideshow {
+  margin-bottom: 20px;
+}
+
+.slide {
+  display: none;
+  font-size: 1rem;
+  color: #333;
+  animation: fade 0.5s ease-in-out;
+}
+
+.slide.active {
+  display: block;
+}
+
+@keyframes fade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.dots {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.dot {
+  height: 10px;
+  width: 10px;
+  margin: 0 5px;
+  background-color: gray;
+  border-radius: 50%;
+  display: inline-block;
+  transition: width 0.3s ease, background-color 0.3s ease;
+}
+
+.dot.active {
+  background-color: #c62828;
+  width: 20px;
+  border-radius: 10px;
+}
+
+.primary-btn {
+  background-color: #c62828;
+  color: white;
+  padding: 12px;
+  width: 100%;
+  border: none;
+  border-radius: 25px;
+  font-size: 1rem;
+  margin-bottom: 10px;
+}
+
+.secondary-btn {
+  background-color: white;
+  color: black;
+  padding: 12px;
+  width: 100%;
+  border: none;
+  border-radius: 25px;
+  font-size: 1rem;
+}
+
+.desktop-view {
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 100vh;
 }
 
-.card {
-  background: white;
-  border-radius: 20px;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+.login-card {
+  background-color: white;
   padding: 30px;
-  width: 350px;
+  border-radius: 25px;
+  width: 500px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.mode-switch {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.tab-switch {
+.mode-buttons {
   display: flex;
   justify-content: center;
-  margin-bottom: 20px;
   gap: 10px;
+  margin-bottom: 5px;
 }
 
-.tab-switch button {
-  padding: 10px 20px;
+.mode-buttons button {
+  padding: 8px 16px;
   border: none;
-  border-radius: 50px;
-  background-color: #f0f0f0;
+  border-radius: 20px;
+  background-color: #eee;
   cursor: pointer;
-  font-weight: bold;
   transition: background-color 0.3s ease;
 }
 
-.tab-switch button.active {
-  background-color: #ff0000;
+.mode-buttons button.active {
+  background-color: #c62828;
   color: white;
 }
 
-#formContainer {
-  display: flex;
-  flex-direction: column;
+.separator-line {
   width: 100%;
-  gap: 12px;
-  animation: fadeIn 0.5s ease-in-out;
+  height: 1px;
+  position: relative;
+  background: linear-gradient(to right, transparent, #999 40%, transparent 60%);
+  margin: 10px 0 15px;
 }
 
+.separator-line span {
+  position: absolute;
+  left: 50%;
+  top: -6px;
+  width: 30px;
+  height: 12px;
+  background-color: white;
+  transform: translateX(-50%);
+}
+
+.form-placeholder {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 0.95em;
+  color: #555;
+}
+
+/* INPUTS & Fokus */
 input {
-  padding: 10px 15px;
-  border: 2px solid #ccc;
-  border-radius: 999px;
+  margin: 10px;
+  padding: 10px;
+  width: 100%;
+  max-width: 300px;
+  border: none;
+  border-radius: 25px;
+  border: 2px solid #333;
   outline: none;
   transition: border-color 0.3s ease;
-  font-size: 1rem;
 }
 
 input:focus {
-  border-color: red;
+  border-color: #b71c1c;
 }
 
-button {
-  padding: 12px;
-  border: none;
-  border-radius: 999px;
-  background-color: #ff0000;
-  color: white;
-  cursor: pointer;
-  font-weight: bold;
-  font-size: 1rem;
-  transition: background-color 0.3s ease;
-}
-
-button.secondary {
-  background-color: #222;
-}
-
-button:hover {
-  background-color: #cc0000;
-}
-
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-    transform: translateY(10px);
+/* Responsive: Mobile Style */
+@media (max-width: 768px) {
+  .desktop-view {
+    display: none;
   }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
+
+  .mobile-view {
+    display: block;
   }
 }
