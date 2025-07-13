@@ -14,7 +14,7 @@ self.addEventListener('install', event => {
       BASE + 'auth_ui/loginWindow.html',
       BASE + 'auth_ui/signInWindow.html',
       BASE + 'auth_ui/css/loginWindow.css',
-      BASE + 'auth_ui/css/singInWindow.css',
+      BASE + 'auth_ui/css/signInWindow.css',
       BASE + 'install.js',
       BASE + 'manifest.json',
       BASE + 'icon2-512.png',
