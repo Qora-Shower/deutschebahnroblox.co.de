@@ -34,12 +34,12 @@ body {
 
 
 .mobile-view {
-  display: none;
+  display: flex;
   flex-direction: column;
   min-height: 100vh;
   padding: 0 20px;
   box-sizing: border-box;
-  justify-content: flex-start;
+  justify-content: center;
   position: relative;
 }
 
