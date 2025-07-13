@@ -1,19 +1,77 @@
+/* Basislayout */
 body {
   font-family: 'Roboto', sans-serif;
   background: #f2f2f2;
   margin: 0;
   padding: 0;
+  min-height: 100vh;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
+  flex-direction: column;
 }
 
+/* Hintergrund mit Wellen */
+.background-top {
+  background: #171717;
+  height: 30vh;
+  width: 100%;
+  position: relative;
+}
+
+.background-top::after {
+  content: "~";
+  position: absolute;
+  bottom: -15px;
+  left: 0;
+  width: 100%;
+  font-size: 8vw;
+  line-height: 1;
+  color: #ffffff;
+  text-align: center;
+  pointer-events: none;
+}
+
+.background-bottom {
+  background: #ffffff;
+  flex: 1;
+  min-height: 70vh;
+  width: 100%;
+  position: relative;
+  padding: 3rem 1rem 2rem;
+  box-sizing: border-box;
+}
+
+.background-bottom::before {
+  content: "~";
+  position: absolute;
+  top: -15px;
+  left: 0;
+  width: 100%;
+  font-size: 8vw;
+  line-height: 1;
+  color: #171717;
+  text-align: center;
+  pointer-events: none;
+}
+
+/* Login-Überschrift oben */
+.header-text {
+  position: absolute;
+  top: 2rem;
+  left: 1.5rem;
+  color: white;
+  font-size: 1.5rem;
+  font-weight: bold;
+  z-index: 2;
+}
+
+/* Auth Container */
 .auth-container {
   background: white;
-  padding: 2rem;
+  padding: 2rem 1.5rem;
   border-radius: 1rem;
-  width: 320px;
+  max-width: 400px;
+  width: 100%;
+  margin: 0 auto;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 
@@ -35,10 +93,49 @@ body {
   padding: 0.75rem 0.75rem 0.75rem 2.5rem;
   border: 1px solid #ccc;
   border-radius: 0.5rem;
+  font-size: 1rem;
 }
 
 .toggle-password {
   right: 10px;
   left: auto;
   cursor: pointer;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #888;
+}
+
+.auth-button {
+  width: 100%;
+  background-color: #1d1d1d;
+  color: white;
+  border: none;
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 1rem;
+  margin-top: 1rem;
+}
+
+@media (max-width: 768px) {
+  .auth-container {
+    padding: 1.5rem 1rem;
+    border-radius: 0.75rem;
+  }
+
+  .header-text {
+    font-size: 1.2rem;
+    top: 1.5rem;
+    left: 1rem;
+  }
+
+  .input-group input {
+    font-size: 0.95rem;
+  }
+
+  .auth-button {
+    font-size: 0.95rem;
+  }
 }
