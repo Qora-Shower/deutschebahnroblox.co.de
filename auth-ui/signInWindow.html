@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Sign Up</title>
-  <link rel="stylesheet" href="/deutschebahnroblox.co.de/auth_ui/css/signInWindow.css" />
+  <link rel="stylesheet" href="/deutschebahnroblox.co.de/auth-ui/css/signInWindow.css" />
   <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
   <script src="https://unpkg.com/lucide@latest"></script>
 </head>
@@ -37,7 +37,7 @@
     </div>
 
     <button id="roblox-btn" class="roblox-button" style="display: none;">Connect with Roblox</button>
-    <button class="auth-button">Create Account</button>
+    <button class="auth-button" id="installBtn" style="display: none;">Install App</button>
   </div>
 
   <script>
@@ -62,5 +62,6 @@
       document.getElementById("confirm-password").style.borderColor = pw === confirm ? "green" : "red";
     }
   </script>
+  <script src="/deutschebahnroblox.co.de/install.js"></script>
 </body>
 </html>
