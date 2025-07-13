@@ -6,6 +6,7 @@
   <title>Login</title>
   <link rel="stylesheet" href="/deutschebahnroblox.co.de/styles/login/login.css" />
   <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link rel="manifest" href="manifest.json">
 </head>
 <body>
   <div class="mobile-view">
@@ -57,5 +58,19 @@
   </div>
 
   <script src="/deutschebahnroblox.co.de/login.js"></script>
+
+  <script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('/deutschebahnroblox.co.de/sw.js', {
+      scope: '/deutschebahnroblox.co.de/'
+    }).then(() => {
+      console.log('✅ Service Worker registriert');
+    }).catch(error => {
+      console.error('❌ Fehler beim Registrieren:', error);
+    });
+  }
+</script>
+
+
 </body>
 </html>
