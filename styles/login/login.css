@@ -4,87 +4,100 @@ body {
   background-color: #dddddd;
   font-family: "Arial", sans-serif;
   color: #111;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 .logo {
   width: 80px;
-  margin: 30px auto 10px;
+  margin: 40px auto 20px;
   display: block;
 }
 
 .welcome {
   text-align: center;
-  margin: 5px 0 15px;
-  font-size: 1.2em;
+  font-size: 1.8em;
+  font-weight: bold;
+  margin-bottom: 20px;
 }
 
 .mobile-view {
   display: none;
-  padding: 20px;
-  text-align: center;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100vh;
+  padding: 0 20px 30px;
+  box-sizing: border-box;
 }
 
 .slideshow {
-  margin-bottom: 20px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  display: flex;
+  gap: 20px;
+  padding: 10px 0;
+  scroll-behavior: smooth;
+  margin-bottom: 10px;
+}
+
+.slides {
+  display: flex;
+  gap: 20px;
+  width: 100%;
 }
 
 .slide {
-  display: none;
+  flex: 0 0 100%;
+  scroll-snap-align: start;
   font-size: 1rem;
   color: #333;
-  animation: fade 0.5s ease-in-out;
-}
-
-.slide.active {
-  display: block;
-}
-
-@keyframes fade {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  text-align: center;
+  padding: 10px;
+  box-sizing: border-box;
 }
 
 .dots {
   display: flex;
   justify-content: center;
-  margin-top: 10px;
+  margin: 10px 0;
+  gap: 6px;
 }
 
 .dot {
-  height: 10px;
-  width: 10px;
-  margin: 0 5px;
-  background-color: gray;
+  width: 8px;
+  height: 8px;
   border-radius: 50%;
-  display: inline-block;
-  transition: width 0.3s ease, background-color 0.3s ease;
+  background-color: grey;
+  transition: all 0.3s ease;
 }
 
 .dot.active {
-  background-color: #c62828;
   width: 20px;
-  border-radius: 10px;
+  border-radius: 999px;
+  background-color: #c62828;
+}
+
+.primary-btn,
+.secondary-btn {
+  width: 100%;
+  padding: 14px;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 25px;
+  border: none;
+  margin-bottom: 10px;
 }
 
 .primary-btn {
   background-color: #c62828;
   color: white;
-  padding: 12px;
-  width: 100%;
-  border: none;
-  border-radius: 25px;
-  font-size: 1rem;
-  margin-bottom: 10px;
 }
 
 .secondary-btn {
   background-color: white;
   color: black;
-  padding: 12px;
-  width: 100%;
-  border: none;
-  border-radius: 25px;
-  font-size: 1rem;
+  border: 1px solid #ccc;
 }
 
 .desktop-view {
@@ -154,7 +167,6 @@ body {
   color: #555;
 }
 
-/* INPUTS & Fokus */
 input {
   margin: 10px;
   padding: 10px;
@@ -171,13 +183,12 @@ input:focus {
   border-color: #b71c1c;
 }
 
-/* Responsive: Mobile Style */
 @media (max-width: 600px) {
   .desktop-view {
     display: none;
   }
 
   .mobile-view {
-    display: block;
+    display: flex;
   }
 }
