@@ -13,7 +13,9 @@ self.addEventListener('install', event => {
       BASE + 'styles/kalender/calender.css',
       BASE + 'install.js',
       BASE + 'manifest.json',
-      BASE + 'icon512.png'
+      BASE + 'icon2-512.png',
+      BASE + 'icon512.png',
+      BASE + 'images/logo/icon512.png'
     ]);
   }));
 });
