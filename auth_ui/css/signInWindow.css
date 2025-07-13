@@ -1,0 +1,45 @@
+@import url('loginWindow.css');
+
+.select-group {
+  margin-bottom: 1rem;
+}
+
+.select-group label {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.toggle-options {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.roblox-button {
+  width: 100%;
+  background-color: #e20613;
+  color: white;
+  border: none;
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.roblox-button:hover {
+  background-color: #b8000b;
+}
+
+.auth-button {
+  width: 100%;
+  background-color: #1d1d1d;
+  color: white;
+  border: none;
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  font-weight: bold;
+  cursor: pointer;
+}

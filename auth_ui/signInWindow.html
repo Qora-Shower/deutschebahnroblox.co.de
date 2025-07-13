@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sign Up</title>
+  <link rel="stylesheet" href="/deutschebahnroblox.co.de/auth_ui/css/signInWindow.css" />
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+  <div class="auth-container">
+    <h1>Create Account</h1>
+
+    <div class="input-group">
+      <i data-lucide="user"></i>
+      <input type="text" placeholder="Username" />
+    </div>
+
+    <div class="input-group">
+      <i data-lucide="lock"></i>
+      <input type="password" placeholder="Password" id="signup-password" />
+      <i data-lucide="eye" class="toggle-password" onclick="togglePassword('signup-password', this)"></i>
+    </div>
+
+    <div class="input-group">
+      <i data-lucide="lock-check"></i>
+      <input type="password" placeholder="Confirm Password" id="confirm-password" oninput="checkMatch()" />
+    </div>
+
+    <div class="select-group">
+      <label>Connect with Roblox?</label>
+      <div class="toggle-options">
+        <label><input type="radio" name="roblox" value="yes" onchange="toggleRoblox(true)"> Yes</label>
+        <label><input type="radio" name="roblox" value="no" onchange="toggleRoblox(false)"> No</label>
+      </div>
+    </div>
+
+    <button id="roblox-btn" class="roblox-button" style="display: none;">Connect with Roblox</button>
+    <button class="auth-button">Create Account</button>
+  </div>
+
+  <script>
+    lucide.createIcons();
+
+    function togglePassword(id, icon) {
+      const field = document.getElementById(id);
+      const isPassword = field.type === "password";
+      field.type = isPassword ? "text" : "password";
+      icon.setAttribute("data-lucide", isPassword ? "eye-off" : "eye");
+      lucide.createIcons();
+    }
+
+    function toggleRoblox(show) {
+      const btn = document.getElementById("roblox-btn");
+      btn.style.display = show ? "block" : "none";
+    }
+
+    function checkMatch() {
+      const pw = document.getElementById("signup-password").value;
+      const confirm = document.getElementById("confirm-password").value;
+      document.getElementById("confirm-password").style.borderColor = pw === confirm ? "green" : "red";
+    }
+  </script>
+</body>
+</html>

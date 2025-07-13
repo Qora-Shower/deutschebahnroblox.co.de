@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login</title>
+  <link rel="stylesheet" href="/deutschebahnroblox.co.de/auth_ui/css/loginWindow.css" />
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+  <div class="auth-container">
+    <h1>Login</h1>
+
+    <div class="input-group">
+      <i data-lucide="user"></i>
+      <input type="text" placeholder="Username" />
+    </div>
+
+    <div class="input-group">
+      <i data-lucide="lock"></i>
+      <input type="password" placeholder="Password" id="login-password" />
+      <i data-lucide="eye" class="toggle-password" onclick="togglePassword('login-password', this)"></i>
+    </div>
+
+    <button class="auth-button">Login</button>
+  </div>
+
+  <script>
+    lucide.createIcons();
+
+    function togglePassword(id, icon) {
+      const field = document.getElementById(id);
+      const isPassword = field.type === "password";
+      field.type = isPassword ? "text" : "password";
+      icon.setAttribute("data-lucide", isPassword ? "eye-off" : "eye");
+      lucide.createIcons();
+    }
+  </script>
+</body>
+</html>
+
