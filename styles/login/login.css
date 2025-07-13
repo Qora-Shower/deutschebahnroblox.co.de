@@ -79,13 +79,17 @@ body {
   background-color: #c62828;
 }
 
-.buttons-wrapper {
-  position: absolute;
-  bottom: 30px;
-  left: 20px;
-  right: 20px;
+.button-container {
+  position: fixed;
+  bottom: 20px;
+  left: 0;
+  right: 0;
+  padding: 0 20px;
+  box-sizing: border-box;
   display: flex;
   flex-direction: column;
+  gap: 10px;
+  z-index: 10;
 }
 
 .primary-btn,
@@ -96,7 +100,6 @@ body {
   font-weight: bold;
   border-radius: 25px;
   border: none;
-  margin-bottom: 10px;
 }
 
 .primary-btn {
