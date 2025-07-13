@@ -15,7 +15,7 @@ self.addEventListener('install', event => {
       BASE + 'manifest.json',
       BASE + 'icon2-512.png',
       BASE + 'icon512.png',
-      BASE + 'images/logo/icon512.png'
+      BASE + 'images/icon512.png'
     ]);
   }));
 });
