@@ -56,5 +56,19 @@
   </div>
 
   <script src="/deutschebahnroblox.co.de/login.js"></script>
+
+  <script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.getRegistrations().then(function(registrations) {
+      for(let registration of registrations) {
+        registration.unregister();
+      }
+    });
+    caches.keys().then(function(names) {
+      for (let name of names) caches.delete(name);
+    });
+  }
+</script>
+
 </body>
 </html>
