@@ -5,43 +5,36 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="icon" type="image/png" href="icon2-512.png">
   <link rel="stylesheet" href="styles/index/index.css">
-  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
-  <link rel="manifest" href="/deutschebahnroblox.co.de/manifest.json">
-
   <title>Start</title>
 </head>
 <body>
-  <!-- Ladeanimation -->
-  <div class="loader-screen" id="loaderScreen">
-    <img src="icon2-512.png" alt="Logo" class="logo">
-    <h1 class="loading-text">Lade<span class="dots">.</span></h1>
+  <div id="startScreen" class="start-screen">
+    <img src="icon2-512.png" alt="Logo" class="start-logo">
   </div>
-  <button id="installButton" style="display: none;">App installieren</button>
 
-  <!-- PWA (Unverändert) -->
-  <script src="/deutschebahnroblox.co.de/install.js"></script>
+  <div id="loaderScreen" class="loader-screen hidden">
+    <div class="spinner"></div>
+  </div>
+
   <script>
-    if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('/deutschebahnroblox.co.de/sw.js', {
-        scope: '/deutschebahnroblox.co.de/'
-      });
-    }
-  </script>
-
-  <!-- Ladeanimation -->
-  <script>
-    const dots = document.querySelector('.dots');
-    let dotCount = 1;
-    setInterval(() => {
-      dots.textContent = '.'.repeat(dotCount++ % 4 || 1);
-    }, 500);
-
+    // Schritt 1: Logo anzeigen (schwarz)
     setTimeout(() => {
-      document.getElementById('loaderScreen').classList.add('hide');
+      document.getElementById("startScreen").classList.add("fade-out");
+      // Schritt 2: Lade-Kreis aktivieren (weiß)
       setTimeout(() => {
-        window.location.href = 'pages/login.html';
-      }, 1000); // nach Animation weiterleiten
-    }, 5000);
+        document.getElementById("startScreen").style.display = "none";
+        document.body.style.backgroundColor = "#ffffff";
+        document.getElementById("loaderScreen").classList.remove("hidden");
+
+        // Schritt 3: Weiterleiten zu login.html
+        setTimeout(() => {
+          document.getElementById("loaderScreen").classList.add("fade-out");
+          setTimeout(() => {
+            window.location.href = "pages/login.html";
+          }, 1000);
+        }, 3000);
+      }, 1000);
+    }, 2000);
   </script>
 </body>
 </html>
