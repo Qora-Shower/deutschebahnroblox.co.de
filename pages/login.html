@@ -7,11 +7,48 @@
   <link rel="stylesheet" href="/deutschebahnroblox.co.de/styles/login/login.css">
 </head>
 <body>
-  <div class="login-screen" id="loginScreen">
-    <h1>Willkommen zurück</h1>
-    <input type="text" placeholder="Benutzername">
-    <input type="password" placeholder="Passwort">
-    <button onclick="window.location.href='/deutschebahnroblox.co.de/pages/calender.html'">Einloggen</button>
+  <div class="card">
+    <div class="tab-switch">
+      <button id="loginTab" class="active" onclick="switchTab('login')">Login</button>
+      <button id="signupTab" onclick="switchTab('signup')">Sign Up</button>
+    </div>
+    <div id="formContainer">
+      <!-- Dynamisch geladen per JavaScript -->
+    </div>
   </div>
+
+  <script>
+    const formContainer = document.getElementById("formContainer");
+    const loginTab = document.getElementById("loginTab");
+    const signupTab = document.getElementById("signupTab");
+
+    function switchTab(tab) {
+      loginTab.classList.remove("active");
+      signupTab.classList.remove("active");
+
+      if (tab === "login") {
+        loginTab.classList.add("active");
+        formContainer.innerHTML = `
+          <h2>Login</h2>
+          <input type="text" placeholder="Benutzername">
+          <input type="password" placeholder="Passwort">
+          <button onclick="window.location.href='/deutschebahnroblox.co.de/pages/calender.html'">Login</button>
+          <button class="secondary" onclick="alert('Supervisor-Login')">Login (Supervisor)</button>
+        `;
+      } else {
+        signupTab.classList.add("active");
+        formContainer.innerHTML = `
+          <h2>Sign Up</h2>
+          <input type="text" placeholder="Benutzername">
+          <input type="password" placeholder="Passwort">
+          <input type="password" placeholder="Passwort bestätigen">
+          <button onclick="alert('User registered')">Sign Up</button>
+          <button class="secondary" onclick="alert('Supervisor sign up')">Sign Up (Supervisor)</button>
+        `;
+      }
+    }
+
+    switchTab('login');
+  </script>
 </body>
 </html>
