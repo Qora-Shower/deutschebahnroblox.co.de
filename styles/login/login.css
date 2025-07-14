@@ -107,7 +107,7 @@ html, body {
   gap: 10px;
   width: 100%;
   box-sizing: border-box;
-  background: transparent;
+  background: #fcfcfc;
 }
 
 .primary-btn,
@@ -136,7 +136,7 @@ html, body {
 }
 
 .login-card {
-  background-color: white;
+  background-color: #fcfcfc;
   padding: 30px;
   border-radius: 25px;
   width: 500px;
