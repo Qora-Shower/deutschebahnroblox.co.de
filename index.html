@@ -18,6 +18,7 @@
   <div id="loaderScreen" class="loader-screen hidden">
     <div class="spinner"></div>
   </div>
+  <button id="InstallButton" style="display: none;">App Download</button>
 
   <script>
     // Schritt 1: Logo anzeigen (schwarz)
@@ -39,6 +40,8 @@
       }, 1000);
     }, 2000);
   </script>
+
+<script src="install.js"></script>
 
 <script>
   if ('serviceWorker' in navigator) {
