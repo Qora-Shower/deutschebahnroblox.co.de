@@ -1,16 +1,18 @@
 body {
   margin: 0;
-  padding: 0;
+  padding-top: env(safe-area-inset-top);
   font-family: Arial, sans-serif;
   background-color: #171717;
   color: white;
-  height: 100vh;
+  height: calc(100vh + env(safe-area-inset-top));
   width: 100vw;
   display: flex;
   justify-content: center;
   align-items: center;
   overflow: hidden;
+  box-sizing: border-box;
 }
+
 
 /* Schwarzes Startscreen mit Logo */
 .start-screen {
