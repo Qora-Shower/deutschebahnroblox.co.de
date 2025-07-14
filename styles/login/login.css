@@ -107,7 +107,7 @@ html, body {
   gap: 10px;
   width: 100%;
   box-sizing: border-box;
-  background: #f1f1f1;
+  background: transparent;
 }
 
 .primary-btn,

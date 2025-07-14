@@ -7,7 +7,7 @@
   "background_color": "#ffffff",
   "theme_color": "#121212",
   "orientation": "any",
-  "display": "fullscreen",
+  "display": "standalone",
   "icons": [
   {
     "src": "/deutschebahnroblox.co.de/icon512.png",
