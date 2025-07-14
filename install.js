@@ -28,7 +28,7 @@ window.addEventListener('beforeinstallprompt', (e) => {
 });
 
 // Prüfen, ob App schon als PWA läuft → Button gar nicht erst anzeigen
-if (window.matchMedia('(display-mode: fullscreen)').matches || window.navigator.fullscreen) {
+if (window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone) {
     console.log("PWA-Modus aktiv");
     document.getElementById('installButton')?.remove();
 }
