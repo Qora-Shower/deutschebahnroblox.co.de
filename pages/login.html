@@ -4,13 +4,14 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Login</title>
-  <link rel="stylesheet" href="/deutschebahnroblox.co.de/styles/login/login.css" />
+  <base href="/deutschebahnroblox.co.de/" />
+  <link rel="stylesheet" href="../styles/login/login.css" />
   <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
-  <link rel="manifest" href="/deutschebahnroblox.co.de/manifest.json">
+  <link rel="manifest" href="../manifest.json">
 </head>
 <body>
   <div class="mobile-view">
-    <img src="/deutschebahnroblox.co.de/images/icon512.png" alt="DB Logo" class="logo" />
+    <img src="../images/icon512.png" alt="DB Logo" class="logo" />
   
     <h1 class="welcome">Welcome to Deutsche Bahn Roblox</h1>
 
@@ -31,8 +32,8 @@
     </div>
 
    <div class="button-container">
-      <button class="primary-btn" onclick="window.location.href='/deutschebahnroblox.co.de/auth-ui/signInWindow.html'">Create an Account</button>
-      <button class="secondary-btn" onclick="window.location.href='/deutschebahnroblox.co.de/auth-ui/loginWindow.html'">Log In</button>
+      <button class="primary-btn" onclick="window.location.href='../auth-ui/signInWindow.html'">Create an Account</button>
+      <button class="secondary-btn" onclick="window.location.href='../auth-ui/loginWindow.html'">Log In</button>
     </div>
   </div>
 
@@ -57,11 +58,11 @@
     </div>
   </div>
 
-  <script src="/deutschebahnroblox.co.de/login.js"></script>
+  <script src="../login.js"></script>
 
   <script>
   if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('/deutschebahnroblox.co.de/sw.js', {
+    navigator.serviceWorker.register('../sw.js', {
       scope: '/deutschebahnroblox.co.de/'
     }).then(() => {
       console.log('✅ Service Worker registriert');

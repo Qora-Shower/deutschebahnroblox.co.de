@@ -4,9 +4,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Login</title>
-  <link rel="stylesheet" href="/deutschebahnroblox.co.de/auth-ui/css/loginWindow.css" />
+  <link rel="stylesheet" href="../auth-ui/css/loginWindow.css" />
   <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
-  <link rel="manifest" href="/deutschebahnroblox.co.de/manifest.json">
+  <link rel="manifest" href="../manifest.json">
   <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 <body>
@@ -41,7 +41,7 @@
 
   <script>
   if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('/deutschebahnroblox.co.de/sw.js', {
+    navigator.serviceWorker.register('../sw.js', {
       scope: '/deutschebahnroblox.co.de/'
     }).then(() => {
       console.log('✅ Service Worker registriert');
